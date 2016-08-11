@@ -1,0 +1,27 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="mj-demo-app">
+  <style>
+    .main {
+      padding: 40px;
+      font-family: Helvetica, Arial;
+      color: #667755;
+    }
+  </style>
+  
+  <template>
+    <div class="main">
+      Hello Polymer Demo!
+    </div>
+  </template>
+  
+  <script>
+    Polymer({
+      is: 'mj-demo-app',
+      
+      ready: function() {
+        console.log('Logging from Polymer!');
+      }
+    });
+  </script>
+</dom-module>

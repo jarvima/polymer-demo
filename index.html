@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <link rel="import" href="mj-demo-app.html">
+  </head>
+  <body>
+    <script>
+      if (!('registerElement' in document) || !('import' in document.createElement('link')) || !('content' in document.createElement('template'))) {
+        var e = document.createElement('script');
+        e.src = 'bower_components/webcomponentsjs/webcomponents-lite.min.js';
+        document.body.appendChild(e);
+      }
+    </script>
+    <mj-demo-app></mj-demo-app>
+  </body>
+</html>
