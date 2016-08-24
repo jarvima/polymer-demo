@@ -1,0 +1,33 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="mj-block">
+  <style>
+    .block {
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #445577;
+      display: inline-block;
+      width: 280px;
+    }
+    .block h3 {
+      padding: 4px;
+      margin: 0 0 8px;
+      font-weight: normal;
+      background-color: var(--mj-block-title-hilite, #dcdfd7);
+      border-bottom: 1px solid #445577;
+    }
+  </style>
+  
+  <template>
+    <span class="block">
+      <h3><content select=".title"></content></h3>
+      <content select="[content]"></content>
+    </span>
+  </template>
+  
+  <script>
+    Polymer({
+      is: 'mj-block',
+    });
+  </script>
+</dom-module>

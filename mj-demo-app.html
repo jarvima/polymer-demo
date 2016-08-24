@@ -1,4 +1,5 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="mj-block.html">
 
 <dom-module id="mj-demo-app">
   <style>
@@ -7,11 +8,28 @@
       font-family: Helvetica, Arial;
       color: #667755;
     }
+    .important {
+      --mj-block-title-hilite: #dfa0ff;
+    }
+    .boring {
+      --mj-block-title-hilite: #ffffbb;
+    }
   </style>
   
   <template>
     <div class="main">
-      Hello Polymer Demo!
+      <mj-block>
+        <span class="title">Title 1</span>
+        <span content>Content 1</span>
+      </mj-block>
+      <mj-block class="important">
+        <span class="title">Second title</span>
+        <span content>The second content.</span>
+      </mj-block>
+      <mj-block class="boring">
+        <span class="title">Title three</span>
+        <span content>Content cohesive to title three.</span>
+      </mj-block>
     </div>
   </template>
   
