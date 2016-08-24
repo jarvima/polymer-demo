@@ -92,4 +92,4 @@ To fix this add the following to the body content in `index.html`:
 
 It should be working in Firefox now.  Congratulations on creating a Polymer WebComponent.
 
-Now lets add a child WebComponent.
+Now lets add a child WebComponent. [[continue]](https://github.com/jarvima/polymer-demo/blob/master/README.01.child.md)
