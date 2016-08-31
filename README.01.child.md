@@ -13,8 +13,9 @@ The child element will look a lot like our app element.
         margin: 10px;
         padding: 10px;
         border: 2px solid #445577;
-        display: inline-block;
+        display: block;
         width: 280px;
+        float: left;
       }
     </style>
 
@@ -144,4 +145,4 @@ Add finally, set the classes on the `mj-block` instances:
 
 Now we have three elements with customized colors.  Notice that the first element uses the default color.
 
-Let's enhance our element a bit with user interaction and data binding.
+Let's enhance our element a bit with user interaction and data binding. [[continue]](https://github.com/jarvima/polymer-demo/blob/master/README.02.binding.md)

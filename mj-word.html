@@ -1,0 +1,80 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="mj-word">
+  <style>
+    .container {
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #445577;
+      display: inline-block;
+      width: 280px;
+    }
+    .container p {
+      margin: 0;
+      padding: 10px 0;
+      min-height: 30px;
+      font-size: 20px;
+      line-height: 28px;
+    }
+    .word {
+      border-bottom: 1px solid #445577;
+    }
+    input {
+      width: 100%;
+      line-height: 20px;
+      font-size: 16px;
+    }
+  </style>
+
+  <template>
+    <span class="container">
+      Enter a word:
+      <input type="text" value="{{word::input}}" on-keydown="_handleKeydown"></input>
+      <p class="word">[[word]]</p>
+      <p>[[definition]]</p>
+    </span>
+  </template>
+
+  <script>
+    var words = {
+      rhombus: 'An equilateral parallelogram.',
+      trapezoid: 'A quadrilateral having two parallel sides.',
+      cube: 'A cubicle, used for work or study.',
+      polygon: 'A closed plane figure bounded by three or more line segments.',
+      pentagon: 'A five-sided building near Washington, D.C.',
+    };
+    
+    Polymer({
+      is: 'mj-word',
+
+      properties: {
+        word: {
+          type: String,
+          value: 'rhombus',
+          observer: '_wordChanged'
+        },
+        definition: {
+          type: String,
+          value: 'An equilateral parallelogram.'
+        }
+      },
+      
+      _wordChanged: function(newValue, oldValue) {
+        if (!oldValue) return;
+        this.definition = '';
+      },
+      
+      _handleKeydown: function(event) {
+        if (event.keyCode != 13) return;
+
+        var definition = words[this.word];
+        if (definition) {
+          this.definition = definition;
+        }
+        else {
+          this.definition = 'Word not found.';
+        }
+      }
+    });
+  </script>
+</dom-module>
