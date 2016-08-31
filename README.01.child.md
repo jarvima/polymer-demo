@@ -118,17 +118,17 @@ This can be accomplished with custom CSS properties.
 
 Update `mj-block` `.block h3` `background-color` style to contain a CSS variable with a default value:
 ```html
-    background-color: var(--mj-block-title-hilite, #dcdfd7);
+  background-color: var(--mj-block-title-hilite, #dcdfd7);
 ```
 
 Add some styles in `mj-demo-app` to set the variable for the different `mj-block` instances:
 ```html
-    .important {
-      --mj-block-title-hilite: #dfa0ff;
-    }
-    .boring {
-      --mj-block-title-hilite: #ffffbb;
-    }
+  .important {
+    --mj-block-title-hilite: #dfa0ff;
+  }
+  .boring {
+    --mj-block-title-hilite: #ffffbb;
+  }
 ```
 
 Add finally, set the classes on the `mj-block` instances:

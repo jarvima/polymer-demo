@@ -104,36 +104,36 @@ Our element looks a little strange when we change the value of the input and the
 
 Update the word property definition:
 ```js
-        word: {
-          type: String,
-          value: 'rhombus',
-          observer: '_wordChanged'
-        },
+  word: {
+    type: String,
+    value: 'rhombus',
+    observer: '_wordChanged'
+  },
 ```
 This tells Polymer to run the elements `_wordChanged` function whenever the value of `word` is updated.
 
 Add the `_wordChanged` function to the prototype object:
 ```js
-    Polymer({
-      is: 'mj-word',
+  Polymer({
+    is: 'mj-word',
 
-      properties: {
-        word: {
-          type: String,
-          value: 'rhombus',
-          observer: '_wordChanged'
-        },
-        definition: {
-          type: String,
-          value: 'An equilateral parallelogram.'
-        }
+    properties: {
+      word: {
+        type: String,
+        value: 'rhombus',
+        observer: '_wordChanged'
       },
-      
-      _wordChanged: function(newValue, oldValue) {
-        if (!oldValue) return;
-        this.definition = '';
+      definition: {
+        type: String,
+        value: 'An equilateral parallelogram.'
       }
-    });
+    },
+
+    _wordChanged: function(newValue, oldValue) {
+      if (!oldValue) return;
+      this.definition = '';
+    }
+  });
 ```
 
 We have to add the `if (!oldValue)` check since `_wordChanged` is called when the default value is set during element initialization.
@@ -144,28 +144,28 @@ Nothing happens when we hit the enter key.  Let's change that and add a key pres
 
 Add a `on-keydown` property to the text input:
 ```html
-      <input type="text" value="{{word::input}}" on-keydown="_handleKeydown"></input>
+  <input type="text" value="{{word::input}}" on-keydown="_handleKeydown"></input>
 ```
 This tells Polymer to call the element's `_handleKeydown` function whenever the input fires a `keydown` event.
 
 Add the `_handleKeydown` function to the prototype object:
 ```js
-      _wordChanged: function(newValue, oldValue) {
-        if (!oldValue) return;
-        this.definition = '';
-      },
-      
-      _handleKeydown: function(event) {
-        if (event.keyCode != 13) return;
+  _wordChanged: function(newValue, oldValue) {
+    if (!oldValue) return;
+    this.definition = '';
+  },
 
-        var definition = words[this.word];
-        if (definition) {
-          this.definition = definition;
-        }
-        else {
-          this.definition = 'Word not found.';
-        }
-      }
+  _handleKeydown: function(event) {
+    if (event.keyCode != 13) return;
+
+    var definition = words[this.word];
+    if (definition) {
+      this.definition = definition;
+    }
+    else {
+      this.definition = 'Word not found.';
+    }
+  }
 ```
 
 And we'll need some dummy data for now.  Throw some dummy data into the elements script tag:
@@ -191,4 +191,4 @@ Now when you change the input value and hit `enter` the displayed definition wil
 
 But dummy data is only good for demos.
 
-Let's create a service to fetch the word definitions. [[continue]](https://github.com/jarvima/polymer-demo/blob/master/README.02.service.md)
+Let's create a service to fetch the word definitions. [[continue]](https://github.com/jarvima/polymer-demo/blob/master/README.03.service.md)
