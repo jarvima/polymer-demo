@@ -168,7 +168,7 @@ Add the `_handleKeydown` function to the prototype object:
   }
 ```
 
-And we'll need some dummy data for now.  Throw some dummy data into the elements script tag:
+And we'll need some dummy data for now.  Throw some dummy data into the element's script tag:
 ```html
   <script>
     var words = {

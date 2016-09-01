@@ -1,0 +1,15 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<script src="slim-xhr.js"></script>
+
+<dom-module id="mj-slim-service">
+  <script>
+    Polymer({
+      is: 'mj-slim-service',
+
+      get: slim.get,
+      post: slim.post,
+      put: slim.put,
+      delete: slim.delete
+    });
+  </script>
+</dom-module>

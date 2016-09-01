@@ -1,0 +1,26 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="mj-slim-service.html">
+
+<dom-module id="mj-word-service">
+  <template>
+    <mj-slim-service id="slim"></mj-slim-service>
+  </template>
+  <script>
+    Polymer({
+      is: 'mj-word-service',
+
+      getDefinition: function(word) {
+        var element = this;
+        var wordUrl = 'http://localhost:5040/word/' + word;
+        
+        return element.$.slim.get(wordUrl).then(function(result) {
+          return result.responseData.definition;
+        },
+        function(error) {
+          console.log('error getting word:', error);
+          return null;
+        });
+      }
+    });
+  </script>
+</dom-module>
