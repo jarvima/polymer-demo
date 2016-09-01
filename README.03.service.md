@@ -1,6 +1,6 @@
 # polymer-demo
 
-## create an element service
+## create a service element
 
 Polymer has some great elements like `iron-ajax` to fetch data.  But let's say, for whatever reason, that our team has decided to use a library called `slim-xhr`. I've included it in the repo. (It's really not a popular library.  It's only used for this demo.)
 
